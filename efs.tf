@@ -13,5 +13,5 @@ resource "aws_efs_file_system" "webapp-efs" {
 resource "aws_efs_mount_target" "webapp-mt" {
   file_system_id = aws_efs_file_system.webapp-efs.id
   subnet_id      = aws_subnet.subnet-webapp-1c.id
-  security_groups = [aws_security_group.sg-efs.id]
+  security_groups = [aws_security_group.efs-sg.id]
 }
