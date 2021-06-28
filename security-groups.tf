@@ -50,7 +50,7 @@ resource "aws_security_group" "sg-alb" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    security_groups  = aws_security_group.sg-ec2.id
+    security_groups  = [aws_security_group.sg-ec2.id]
   }
 
   tags = {
@@ -68,7 +68,7 @@ resource "aws_security_group" "sg-rds" {
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"
-    security_groups  = aws_security_group.sg-ec2.id
+    security_groups  = [aws_security_group.sg-ec2.id]
   }
 
   egress {
