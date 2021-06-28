@@ -1,5 +1,5 @@
-resource "aws_security_group" "sg-ec2" {
-  name        = "sg-ec2"
+resource "aws_security_group" "ec2-sg" {
+  name        = "ec2-sg"
   description = "SG para EC2"
   vpc_id      = aws_vpc.webapp-vpc.id
 
@@ -28,12 +28,12 @@ resource "aws_security_group" "sg-ec2" {
   }
   
   tags = {
-    Name = "sg-ec2"
+    Name = "ec2-sg"
   }
 }
 
-resource "aws_security_group" "sg-alb" {
-  name        = "sg-alb"
+resource "aws_security_group" "alb-sg" {
+  name        = "alb-sg"
   description = "SG para ALB"
   vpc_id      = aws_vpc.webapp-vpc.id
 
@@ -54,12 +54,12 @@ resource "aws_security_group" "sg-alb" {
   }
 
   tags = {
-    Name = "sg-alb"
+    Name = "alb-sg"
   }
 }
 
-resource "aws_security_group" "sg-rds" {
-  name        = "sg-rds"
+resource "aws_security_group" "rds-sg" {
+  name        = "rds-sg"
   description = "SG para RDS"
   vpc_id      = aws_vpc.webapp-vpc.id
 
@@ -80,12 +80,12 @@ resource "aws_security_group" "sg-rds" {
   }
   
   tags = {
-    Name = "sg-rds"
+    Name = "rds-sg"
   }
 }
 
-resource "aws_security_group" "sg-efs" {
-  name        = "sg-efs"
+resource "aws_security_group" "efs-sg" {
+  name        = "efs-sg"
   description = "SG para EFS"
   vpc_id      = aws_vpc.webapp-vpc.id
 
@@ -106,6 +106,6 @@ resource "aws_security_group" "sg-efs" {
   }
   
   tags = {
-    Name = "sg-efs"
+    Name = "efs-sg"
   }
 }
