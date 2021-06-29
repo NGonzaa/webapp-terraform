@@ -11,7 +11,7 @@ resource "aws_rds_cluster" "rds-webapp" {
   cluster_identifier  = "rds-webapp"
   db_subnet_group_name = aws_db_subnet_group.webapp-subnet-group.name
   vpc_security_group_ids = [aws_security_group.rds-sg.id]
-  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  availability_zones = ["us-east-1c", "us-east-1d"]
   database_name      = "webapp-db"
   master_username    = "admin"
   master_password    = "admin123"
