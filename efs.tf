@@ -1,6 +1,6 @@
 resource "aws_efs_file_system" "webapp-efs" {
   creation_token = "webapp-efs"
-  availability_zone_name = "us-east-1b"
+  availability_zone_name = "us-east-1c"
 
   lifecycle_policy {
     transition_to_ia = "AFTER_30_DAYS"
